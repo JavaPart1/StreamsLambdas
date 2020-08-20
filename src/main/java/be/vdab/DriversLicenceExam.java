@@ -10,11 +10,11 @@ public class DriversLicenceExam {
     public static void main(String[] args) {
         // Create driver exam
         DriverExam driverExam = new DriverExam(new ArrayList<>
-                (Arrays.asList(1,5,4,1,1,3,2,3,4,4,2,3,3,3,1,5,5,2,1,3)));
+                (Arrays.asList('A','E','D','A','A','C','B','C','C','D','B','C','C','C','A','E','E','B','A','C')));
 
         // Student answers
-        ArrayList<Integer> studentAnswers = new ArrayList<>
-                (Arrays.asList(1,5,4,1,1,3,5,3,4,4,1,3,5,3,1,5,4,2,1,3));
+        ArrayList<Character> studentAnswers = new ArrayList<>
+                (Arrays.asList('A','E','D','A','A','C','B','C','C','D','A','C','C','C','A','E','E','B','A','C'));
         driverExam.setStudentAnswers(studentAnswers);
 
         System.out.println("\nDrivers Licence Exam");
@@ -25,6 +25,6 @@ public class DriversLicenceExam {
 
         System.out.println("Which questions are wrong : ");
         driverExam.questionsMissed().stream().
-                forEach(e-> System.out.println("question: "+e + " "));
+                forEach(e-> System.out.println(" question: "+(e+1)));
     }
 }

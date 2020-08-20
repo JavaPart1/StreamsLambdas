@@ -6,15 +6,15 @@ import java.util.Map;
 import java.util.Set;
 
 public class DriverExam {
-    private ArrayList<Integer> correctAnswers;
-    private ArrayList<Integer> studentAnswers;
+    private ArrayList<Character> correctAnswers;
+    private ArrayList<Character> studentAnswers;
     final private int MINNUMBERCORRECTANSWERS = 15;
 
-    public DriverExam(ArrayList<Integer> correctAnswers) {
+    public DriverExam(ArrayList<Character> correctAnswers) {
         this.correctAnswers = correctAnswers;
     }
 
-    public void setStudentAnswers(ArrayList<Integer> studentAnswers) {
+    public void setStudentAnswers(ArrayList<Character> studentAnswers) {
         this.studentAnswers = studentAnswers;
     }
 
