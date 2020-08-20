@@ -1,5 +1,6 @@
 package be.vdab;
 
+import be.vdab.domain.Album;
 import be.vdab.domain.Artist;
 import be.vdab.domain.Track;
 
@@ -7,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class ArtistsAndAlbumsExercise {
     public static void main(String[] args) {
@@ -46,6 +48,40 @@ public class ArtistsAndAlbumsExercise {
 
         // Create Tracks & Albums
         Track t1 = new Track("Heloo");
+        Track t2 = new Track("Hello again");
+        Track t3 = new Track("Goodbye");
+        Track t4 = new Track("Once more");
+        Track t5 = new Track("New Gold Dream");
+        Set<Track> trackSet = new HashSet<>();
+        trackSet.add(t1);
+        trackSet.add(t2);
+        trackSet.add(t3);
+        trackSet.add(t4);
+        trackSet.add(t5);
+        Album al1 = new Album("All1");
+        al1.setTracks(trackSet);
+
+
+        Track d1 = new Track("Heloooo");
+        Track d2 = new Track("Hello again and again");
+        Track d3 = new Track("Goodbyeeee");
+        Track d4 = new Track("Once not more");
+        Track d5 = new Track("New Silver Dream");
+        trackSet.clear();
+        trackSet.add(d1);
+        trackSet.add(d2);
+        trackSet.add(d3);
+        trackSet.add(d4);
+        trackSet.add(d5);
+        Album al2 = new Album("All2");
+        al2.setTracks(trackSet);
+
+        List<Album> albumList = new ArrayList<>();
+        albumList.add(al1);
+        albumList.add(al2);
+
+        albumList.stream().map(e->e.getTracks(3)).forEach(s-> System.out.println(s.toString()));
+
 
 
     }

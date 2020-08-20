@@ -14,4 +14,11 @@ public class Track {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return "Track{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }
