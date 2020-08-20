@@ -10,11 +10,13 @@ import java.util.stream.IntStream;
 
 public class LambdasAndStreams {
     public static void main(String[] args) throws Exception {
+        // Predicate voor filter
         Predicate<Integer> integerPredicate = number -> number >= 100;
 
         List<Integer> integers = Arrays.asList(5, 51, 100, 564, 65, 651, 651, 65, 651, 65);
         integers.stream().filter(integerPredicate).forEach(System.out::println);
 
+        // findAny geeft een Optional terug
         Optional<Integer> optionalInteger = integers.stream().filter(integer -> integer == 65).findAny();
 
         if (optionalInteger.isPresent()) {
@@ -32,6 +34,8 @@ public class LambdasAndStreams {
         // System.out.println(optionalInteger.get());
 
         System.out.println("-------");
+
+
         //15.1 Count lower case
         String text = "SUPERCALIFRAGILISTicEXPIALIDOCIOUS";
         System.out.println(text
@@ -63,7 +67,9 @@ public class LambdasAndStreams {
         System.out.println(reduce.getAsInt());
 
 
-        ArrayList<Integer> collect = integers.stream().filter(integer1 -> integer1 < 10).collect(Collectors.toCollection(ArrayList::new));
+        ArrayList<Integer> collect = integers.stream()
+                .filter(integer1 -> integer1 < 10)
+                .collect(Collectors.toCollection(ArrayList::new));
         Integer[] i = {10,20,30};
         System.out.println(collect);
 //        Stream.of(i);
@@ -76,7 +82,9 @@ public class LambdasAndStreams {
             numbers.add((int) (Math.random() * 10));
         }
 
-        List<Integer> filteredList = numbers.stream().filter(number -> number <= 5 && number >= 1).collect(Collectors.toList());
+        List<Integer> filteredList = numbers.stream()
+                .filter(number -> number <= 5 && number >= 1)
+                .collect(Collectors.toList());
 
         filteredList.stream().forEach(System.out::println);
 
@@ -90,7 +98,7 @@ public class LambdasAndStreams {
                 .mapToInt(value -> value).average()
                 .getAsDouble());
 
-        System.out.println("---Als je wat van beren leren kan---");
+        System.out.println("\n---Als je wat van beren leren kan---");
 
         List<Bear> bears = new ArrayList<>();
 
@@ -99,6 +107,7 @@ public class LambdasAndStreams {
         Bear bearDub = new Bear("Elias");
         Bear bear2 = new Bear("Timo");
 
+        // Gebruik van aslist
         bears = Arrays.asList(bear, bear1, bear2, bearDub);
 
         List<Person> people = bears

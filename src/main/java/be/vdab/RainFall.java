@@ -1,6 +1,7 @@
 package be.vdab;
 
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class RainFall {
@@ -8,20 +9,13 @@ public class RainFall {
 
     public static void main(String[] args) {
         // Input rainfall for 12 months
-        ArrayList<Double> rainfall = new ArrayList<Double>();
-        rainfall.add((double) 33);
-        rainfall.add((double) 23);
-        rainfall.add((double) 13);
-        rainfall.add((double) 10);
-        rainfall.add((double) 15);
-        rainfall.add((double) 8);
-        rainfall.add((double) 5);
-        rainfall.add((double) 10);
-        rainfall.add((double) 4);
-        rainfall.add((double) 14);
-        rainfall.add((double) 35);
-        rainfall.add((double) 37);
+        List<Integer> rainfall;
+        rainfall = Arrays.asList(33,23,13,10,15,8,5,10,4,14,35,37);
 
+        System.out.println("\nRainfall 2020");
+
+        System.out.println("---total---");
+        System.out.println(rainfall.stream().mapToDouble(value -> value).sum());
 
         System.out.println("---avg---");
         System.out.println(rainfall.stream().mapToDouble(value -> value).average().getAsDouble());

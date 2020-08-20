@@ -4,10 +4,7 @@ import be.vdab.domain.Album;
 import be.vdab.domain.Artist;
 import be.vdab.domain.Track;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class ArtistsAndAlbumsExercise {
@@ -52,12 +49,8 @@ public class ArtistsAndAlbumsExercise {
         Track t3 = new Track("Goodbye");
         Track t4 = new Track("Once more");
         Track t5 = new Track("New Gold Dream");
-        Set<Track> trackSet = new HashSet<>();
-        trackSet.add(t1);
-        trackSet.add(t2);
-        trackSet.add(t3);
-        trackSet.add(t4);
-        trackSet.add(t5);
+        List<Track> trackSet = new ArrayList<>();
+        trackSet = Arrays.asList(t1, t2, t3, t4,t5);
         Album al1 = new Album("All1");
         al1.setTracks(trackSet);
 
@@ -67,12 +60,8 @@ public class ArtistsAndAlbumsExercise {
         Track d3 = new Track("Goodbyeeee");
         Track d4 = new Track("Once not more");
         Track d5 = new Track("New Silver Dream");
-        trackSet.clear();
-        trackSet.add(d1);
-        trackSet.add(d2);
-        trackSet.add(d3);
-        trackSet.add(d4);
-        trackSet.add(d5);
+        trackSet = Arrays.asList(d1, d2, d3, d4,d5);
+
         Album al2 = new Album("All2");
         al2.setTracks(trackSet);
 

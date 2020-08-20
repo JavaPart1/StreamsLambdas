@@ -53,7 +53,9 @@ public class ZooApplication {
             numbers.add((int) (Math.random() * 10));
         }
 
-        List<Integer> filteredList = numbers.stream().filter(number -> number <= 5 && number >= 1).collect(Collectors.toList());
+        List<Integer> filteredList = numbers.stream()
+        .filter(number -> number <= 5 && number >= 1)
+        .collect(Collectors.toList());
 
         filteredList.stream().forEach(System.out::println);
 
@@ -88,7 +90,9 @@ public class ZooApplication {
             numbers.add((int) (Math.random() * 10));
         }
 
-        List<Integer> filteredList = numbers.stream().filter(number -> number <= 5 && number >= 1).collect(Collectors.toList());
+        List<Integer> filteredList = numbers.stream()
+                .filter(number -> number <= 5 && number >= 1)
+                .collect(Collectors.toList());
 
         filteredList.stream().forEach(System.out::println);
 

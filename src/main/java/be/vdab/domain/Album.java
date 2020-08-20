@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class Album {
     private String name;
-    private Set<Track> tracks;
+    private List<Track> tracks;
     private List<Artist> musicians;
 
     public Album(String name) {
@@ -21,16 +21,16 @@ public class Album {
         this.name = name;
     }
 
-    public Set<Track> getTracks(int nbr) {
+    public List<Track> getTracks(int nbr) {
         if (nbr > 0){
-            return  (tracks.stream().limit(nbr).collect(Collectors.toSet()));
+            return  (tracks.stream().limit(nbr).collect(Collectors.toList()));
 
         }else{
             return tracks;
         }
     }
 
-    public void setTracks(Set<Track> tracks) {
+    public void setTracks(List<Track> tracks) {
         this.tracks = tracks;
     }
 
