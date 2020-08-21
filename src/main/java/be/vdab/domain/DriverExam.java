@@ -1,11 +1,21 @@
 package be.vdab.domain;
 
+import be.vdab.DriversLicenceExam;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 public class DriverExam {
+    Logger loggerd = LoggerFactory.getLogger(DriverExam.class);
+
+    //String programName = "DriverExam";
+
+    //loggerd.info("{} started", programName);
+
     private ArrayList<Character> correctAnswers;
     private ArrayList<Character> studentAnswers;
     final private int MINNUMBERCORRECTANSWERS = 15;
